@@ -15,8 +15,8 @@
 ## Решение
 
 Проекты, которые я выбрал:
-- [Тетрис task - 3]()
-- [Угадай число task - 6]()
-- [Интерактивная карта с маркерами task - 7]()
-- [крестики-нолики task - 10]()
-- [Планировщик задач task - 4]()
+- [Тетрис task - 3](https://github.com/Nafikov20/wb-l2/tree/main/Task%20-%203.1)
+- [Угадай число task - 6](https://github.com/Nafikov20/wb-l2/tree/main/Task%20-%206)
+- [Интерактивная карта с маркерами task - 7](https://github.com/Nafikov20/wb-l2/tree/main/Task%20-%207)
+- [крестики-нолики task - 10](https://github.com/Nafikov20/wb-l2/tree/main/Task%20-%2010)
+- [Планировщик задач task - 4](https://github.com/Nafikov20/wb-l2/tree/main/Task%20-%204)
