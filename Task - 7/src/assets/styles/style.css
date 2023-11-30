@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+.marker {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 1000;
+    width: 50%;
+    height: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.edit-marker {
+    margin-right: 5px;
+}
+.edit-marker, .delete-marker {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.filter {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 1000;
+    width: 50%;
+    height: 20px;
+}

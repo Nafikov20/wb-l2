@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="icon" type="image/png" href="">
+    <title>Random number</title>
+</head>
+<body>
+    <button id="make-random">Начать игру</button>
+    <div class="notification"></div>
+    <div class="range"></div>
+    <div class="hint"></div>
+    <div class="count"></div>
+    <form id="send-number">
+        <label>
+            <input id="response-input"
+                   name="number"
+                   type="number"
+                   disabled
+            >
+        </label>
+        <label>
+            <input id="response-submit"
+                   type="submit"
+                   disabled
+            >
+        </label>
+    </form>
+<button id="reload-game">Перезапустить игру</button>
+<button id="increase-range">Увеличить диапазон до 1000</button>
+
+</body>
+<script src="js/script.js"></script>
+</html>
