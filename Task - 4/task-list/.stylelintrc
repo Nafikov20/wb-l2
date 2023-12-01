@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": "[_a-zA-Z0-9]+",
+    "selector-id-pattern": "[_a-zA-Z0-9]+",
+    "no-empty-source": null,
+    "declaration-empty-line-before": null,
+    "keyframes-name-pattern": null,
+    "at-rule-no-unknown": true
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "plugin:import/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "ignorePatterns": ["dist", ".eslintrc.cjs"],
+  "plugins": [
+    "react-refresh",
+    "unused-imports",
+    "dirs",
+    "sort-keys-fix",
+    "simple-import-sort"
+  ],
+  "rules": {
+    // eslint-plugin-react
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "shorthandFirst": true,
+        "reservedFirst": true,
+        "multiline": "last"
+      }
+    ],
+    "react/jsx-curly-brace-presence": ["error", "never"],
+    "react/display-name": "off",
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx", ".jsx"]
+      }
+    ],
+    // eslint
+    "no-console": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    // eslint-plugin-unicorn
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "kebabCase"
+      }
+    ],
+    "unicorn/consistent-function-scoping": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-null": "off",
+    "unicorn/explicit-length-check": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": "off",
+    // eslint-plugin-react-refresh
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
+    // eslint-plugin-import
+    "import/no-unresolved": "off",
+    // eslint-plugin-sort-keys-fix
+    "sort-keys-fix/sort-keys-fix": [
+      "error",
+      "asc",
+      {
+        "natural": true
+      }
+    ],
+    // eslint-plugin-unused-imports
+    "unused-imports/no-unused-imports": "error",
+    // eslint-plugin-dirs
+    "dirs/dirnames": [
+      2,
+      {
+        "pattern": "^[a-z-]+$"
+      }
+    ],
+    // eslint-plugin-simple-import-sort
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^(react)(\\/.*|$)", "^(react-dom)(\\/.*|$)"],
+          ["^@?\\w"],
+          [
+            "^(~)(\\/.*|$)",
+            "^(~/pages)(\\/.*|$)",
+            "^(~/layouts)(\\/.*|$)",
+            "^(~/containers)(\\/.*|$)",
+            "^(~/components)(\\/.*|$)",
+            "^(~/ui)(\\/.*|$)"
+          ],
+          [
+            "^(~/api)(\\/.*|$)",
+            "^(~/hooks)(\\/.*|$)",
+            "^(~/store)(\\/.*|$)",
+            "^(~/helpers)(\\/.*|$)",
+            "^(~/types)(\\/.*|$)",
+            "^(~/constants)(\\/.*|$)"
+          ],
+          ["^\\."],
+          ["(jpe?g|png|webp|svg|avif)$"],
+          ["(css)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
