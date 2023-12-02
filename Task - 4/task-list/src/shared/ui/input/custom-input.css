@@ -1,0 +1,37 @@
+/* styles.css */
+.custom-input__container {
+    position: relative;
+}
+.custom-input__label {
+    position: absolute;
+    top: 10px;
+    display: block;
+    pointer-events: none;
+    color: #8a8686;
+    transition: top .2s, color .2s, transform .2s;
+}
+
+.custom-input {
+    width: 100%;
+    border: 0;
+    background-color: inherit;
+    padding: 10px 0;
+    outline: none;
+    appearance: none;
+    border-radius: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #8a8686;
+    transition: border-color .2s ;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: rgba(75, 75, 75, 0.5);
+}
+.custom-input:focus + .custom-input__label,
+.custom-input:not(:focus):valid + .custom-input__label{
+    top: -15px;
+    color: rgba(75, 75, 75, 0.5);
+    transform: scale(.84);
+
+}

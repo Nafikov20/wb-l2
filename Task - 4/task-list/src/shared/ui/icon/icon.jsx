@@ -1,5 +1,6 @@
-
 import cc from 'classcat';
+
+import './custom-icon.css'
 
 
 
@@ -10,7 +11,7 @@ export const Icon = ({ name, className, ...props }) => {
 
   return (
     <svg
-      className={cc(['select-none fill-current text-inherit', className])}
+      className={cc(['custom-icon', className])}
       {...props}
     >
       <use xlinkHref={`/imgs/svg-sprites/${spriteName}.svg#${iconName}`} />

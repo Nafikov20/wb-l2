@@ -1,0 +1,80 @@
+.Checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.Checkbox:last-child {
+    margin-bottom: 0;
+}
+
+.Checkbox-Inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(228, 228, 228, 1);;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
+    transition: all 1s;
+}
+
+
+.Checkbox-Icon {
+    width: 100%;
+    height: 100%;
+    transform: translateY(-5px);
+    opacity: 0;
+    transition: opacity 0.128s ease-in-out, transform 0.328s ease-in-out;
+}
+
+.Checkbox-Inner input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.Checkbox:hover .Checkbox-Inner {
+    border-color: rgba(142, 142, 147, 1);
+}
+
+.Checkbox:hover .Checkbox-Label {
+    color: rgba(176, 151, 106, 1);
+}
+
+.Checkbox__active .Checkbox-Inner {
+    background-color:  rgba(176, 151, 106, 1);
+    border: 1px solid  rgba(176, 151, 106, 1);
+    transition: background-color 1s;
+}
+
+.Checkbox__active .Checkbox-Icon {
+    transform: translateY(2px);
+    fill: white;
+    opacity: 1;
+}
+
+.Checkbox__active .Checkbox-Label {
+    color:  rgba(176, 151, 106, 1);
+}
+
+.Checkbox__active:hover .Checkbox-Inner {
+    border-color: rgba(176, 151, 106, 1);
+}
+
+.Checkbox-Label {
+    margin-left: 15px;
+    transition: all 0.15s;
+}
