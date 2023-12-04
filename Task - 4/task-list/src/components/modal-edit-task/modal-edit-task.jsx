@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { useTaskContext } from '../../containers/task-context/task-context';
 import { Button } from '../../shared/ui/button/button';
 import { Input } from '../../shared/ui/input/input';
 import { Modal } from '../../shared/ui/modal/modal';
@@ -12,9 +11,9 @@ export const ModalEditTask = ({ onClose, visible, title, taskToEdit, onEdit }) =
     // eslint-disable-next-line react/prop-types
     const [name, setName] = useState(taskToEdit.name);
     // eslint-disable-next-line react/prop-types
+    const [date, setDate] = useState(taskToEdit.date);
+    // eslint-disable-next-line react/prop-types
     const [description, setDescription] = useState(taskToEdit.description);
-    const { setTasks } = useTaskContext();
-
     const resetState = () => {
         setName('');
         setDescription('');
@@ -29,6 +28,7 @@ export const ModalEditTask = ({ onClose, visible, title, taskToEdit, onEdit }) =
     const handleEditClick = () => {
         const editedTask = {
             ...taskToEdit,
+            date,
             description,
             name,
         };
@@ -43,6 +43,10 @@ export const ModalEditTask = ({ onClose, visible, title, taskToEdit, onEdit }) =
 
     const handleTitleEditChange = (newTitle) => {
         setName(newTitle);
+    };
+
+    const handleDateEditChange = (newDate) => {
+        setDate(newDate);
     };
 
     return (
@@ -64,7 +68,14 @@ export const ModalEditTask = ({ onClose, visible, title, taskToEdit, onEdit }) =
                     value={description}
                     onChange={handleDescriptionEditChange}
                 />
-                <Input name="date-name" type="datetime-local" />
+                <Input
+                    required
+                    label="Дата окночания"
+                    name='date'
+                    type='datetime-local'
+                    value={date}
+                    onChange={handleDateEditChange}
+                />
                 <Button className="modal-edit-task-btn" typeButton="button" onClick={handleEditClick}>
                     Сохранить изменения
                 </Button>

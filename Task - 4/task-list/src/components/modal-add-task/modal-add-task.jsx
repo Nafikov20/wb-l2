@@ -10,12 +10,15 @@ import './modal-add-task.css'
 // eslint-disable-next-line react/prop-types
 export const ModalAddTask = ({onClose, visible, title}) => {
     const [name, setName] = useState('');
+    const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
+
     const { setTasks } = useTaskContext();
 
     const resetState = () => {
         setName('');
         setDescription('');
+        setDate('');
     }
 
     useEffect(() => {
@@ -27,7 +30,9 @@ export const ModalAddTask = ({onClose, visible, title}) => {
 
     const createModalClick = () => {
         let newTask = {
+            date: date,
             description: description,
+            done: false,
             name: name
         };
 
@@ -42,6 +47,13 @@ export const ModalAddTask = ({onClose, visible, title}) => {
     const handleTitleAddTaskChange = (newTitle) => {
         setName(newTitle)
     };
+
+    const handleDateAddTaskChange = (newDate) => {
+        const updateDate = newDate.split('-');
+        const time = updateDate[2].split('T');
+        const newFormatDate = time[0] + '.' + updateDate[1] + '.' + updateDate[0] + ' ' + time[1];
+        setDate(newFormatDate);
+    }
     return (
         <Modal title={title} visible={visible} onClose={onClose}>
             <form action="">
@@ -61,7 +73,13 @@ export const ModalAddTask = ({onClose, visible, title}) => {
                     value={description}
                     onChange={handleDescriptionAddTaskChange}
                 />
-                <Input name='date-name' type='datetime-local'/>
+                <Input
+                    required
+                    label="Дата окночания"
+                    name='date'
+                    type='datetime-local'
+                    onChange={handleDateAddTaskChange}
+                />
                 <Button className='modal-add-task-btn' typeButton='button' onClick={createModalClick}>
                     Создать задачу
                 </Button>
